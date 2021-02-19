@@ -1,0 +1,8 @@
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\bin\Debug\Suikerterrein.dll
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\bin\Debug\Suikerterrein.pdb
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.csprojAssemblyReference.cache
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.AssemblyInfoInputs.cache
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.AssemblyInfo.cs
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.csproj.CoreCompileInputs.cache
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.dll
+E:\Schooljaar_2020-2021\healthub\Suikerterrein\project\.mono\temp\obj\Debug\Suikerterrein.pdb

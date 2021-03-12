@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Suikerterrein"
 run/main_scene="res://Scenes/testscene.tscn"
-config/icon="res://icon.png"
+config/icon="res://Images/icon.png"
 
 [audio]
 

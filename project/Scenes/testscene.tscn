@@ -1,3 +1,115 @@
 [gd_scene format=2]
 
+<<<<<<< Updated upstream
 [node name="Node2D" type="Node2D"]
+=======
+[ext_resource path="res://Images/Player/Trans_Front (2).png" type="Texture" id=1]
+[ext_resource path="res://Images/handschoenen.png" type="Texture" id=4]
+[ext_resource path="res://Images/Ingredients/brandnetel.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.1199, 21.5466 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends KinematicBody2D
+
+export (int) var speed = 200
+var target = Vector2()#player moves toward
+var velocity = Vector2()
+#equip/inv
+var equipment = 0#what equipment you are using(might replace with several booleans)
+var heldobj = 0#what object is being held by the player
+
+func _input(event):#movement on click
+	if event.is_action_pressed('click'):#if you pressed left mouse button
+		target = get_global_mouse_position()#get mouse click position
+
+func _physics_process(_delta):
+	velocity = position.direction_to(target) * speed#calculates velocity
+	# look_at(target) # enable if you want the node to rotate towards
+
+	if position.distance_to(target) > 5:#checks if the distance between player and target(click position) is less than int
+		velocity = move_and_slide(velocity)#sets velocity
+
+func _on_Area2D_body_entered(body):#Trigger
+
+	if body.name == \"Gloves\" && equipment != 1:# check if node's name is gloves & if gloves havent been equipped yet
+		equipment += 1#set equipment to gloves
+		body.queue_free()#hides gloves node
+		
+	if body.name == \"Nettle\":#if node name = nettle
+		if equipment == 1:# if gloves are equipped
+			heldobj = 1
+			body.queue_free()#hides nettle node
+		
+	pass # Replace with function body.
+
+
+
+"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.28797, 23.9673 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.5152, 27.2576 )
+
+[node name="testobject" type="Node2D"]
+position = Vector2( 31.1493, 28.9005 )
+z_as_relative = false
+
+[node name="Gloves" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gloves"]
+position = Vector2( 300, 500 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Gloves/CollisionShape2D"]
+position = Vector2( -0.297119, 0 )
+scale = Vector2( 0.103789, 0.13253 )
+texture = ExtResource( 4 )
+
+[node name="Nettle" type="KinematicBody2D" parent="."]
+position = Vector2( 416.839, 98.5301 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nettle"]
+position = Vector2( 2.97638, 0.992119 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Nettle/CollisionShape2D"]
+scale = Vector2( 0.103789, 0.13253 )
+texture = ExtResource( 5 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 232.164, 175.742 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+z_as_relative = false
+collision_layer = 2
+collision_mask = 2
+script = SubResource( 2 )
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="Player"]
+position = Vector2( 12.6192, 20.2442 )
+z_as_relative = false
+shape = SubResource( 3 )
+one_way_collision_margin = 0.0
+
+[node name="player trigger" type="Area2D" parent="Player/PlayerCollider"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerCollider/player trigger"]
+position = Vector2( 0, 0.22271 )
+shape = SubResource( 4 )
+one_way_collision_margin = 0.0
+
+[node name="PixelWolf" type="Sprite" parent="Player"]
+position = Vector2( 11.4669, 25.1353 )
+rotation = 2.4646e-13
+scale = Vector2( 0.12357, 0.117299 )
+z_as_relative = false
+texture = ExtResource( 1 )
+flip_v = true
+[connection signal="hide" from="Gloves/CollisionShape2D" to="Player" method="_on_CollisionShape2D_hide"]
+[connection signal="hide" from="Nettle/CollisionShape2D" to="Player" method="_on_CollisionShape2D_hide"]
+[connection signal="body_entered" from="Player/PlayerCollider/player trigger" to="Player" method="_on_Area2D_body_entered"]
+>>>>>>> Stashed changes

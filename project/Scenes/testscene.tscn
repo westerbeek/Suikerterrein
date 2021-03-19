@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Images/Player/Playerfront.png" type="Texture" id=1]
+[ext_resource path="res://Images/Ingredients/brandnetel..png" type="Texture" id=2]
 [ext_resource path="res://Images/handschoenen.png" type="Texture" id=4]
-[ext_resource path="res://Images/Ingredients/brandnetel.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.1199, 21.5466 )
@@ -69,15 +69,14 @@ scale = Vector2( 0.103789, 0.13253 )
 texture = ExtResource( 4 )
 
 [node name="Nettle" type="KinematicBody2D" parent="."]
-position = Vector2( 400, 0 )
+position = Vector2( 400, 100 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nettle"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Nettle/CollisionShape2D"]
-position = Vector2( 4.89429, 5.19141 )
 scale = Vector2( 0.103789, 0.13253 )
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 142.689, 92.6275 )

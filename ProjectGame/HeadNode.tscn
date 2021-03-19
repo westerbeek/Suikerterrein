@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://HeadNode.gd" type="Script" id=1]
+[ext_resource path="res://Menu/MenuScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu/SettingsScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Options/Options.tscn" type="PackedScene" id=4]
+[ext_resource path="res://RecipeBook/RecipeBook.tscn" type="PackedScene" id=5]
+
+[node name="HeadNode" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="MenuScreen" parent="." instance=ExtResource( 2 )]
+
+[node name="SettingsScreen" parent="." instance=ExtResource( 3 )]
+
+[node name="Options" parent="." instance=ExtResource( 4 )]
+
+[node name="RecipeBook" parent="." instance=ExtResource( 5 )]
+[connection signal="pressed" from="MenuScreen/UI/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuScreen/UI/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="MenuScreen/UI/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="SettingsScreen/UI/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="toggled" from="SettingsScreen/UI/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="pressed" from="Options/OptionsContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Options/OptionsContainer/SettingButton" to="." method="_on_SettingButton_pressed"]
+
+[editable path="MenuScreen"]
+
+[editable path="SettingsScreen"]
+
+[editable path="Options"]
+
+[editable path="RecipeBook"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menu/Buttons/PlayButtonPressed.png" type="Texture" id=1]
+[ext_resource path="res://Menu/Moeraslandschap_schets.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Buttons/PlayButtonDefault.png" type="Texture" id=3]
+[ext_resource path="res://Menu/Buttons/PlayButtonHover.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Buttons/SettingsButtonHover.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Buttons/SettingsButtonDefault.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Buttons/SettingsButtonPressed.png" type="Texture" id=7]
+
+[node name="MenuScreen" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 959.663, 327.516 )
+scale = Vector2( 0.95693, 0.763119 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 613.027
+margin_top = 20.4221
+margin_right = 853.027
+margin_bottom = 100.422
+rect_scale = Vector2( 3, 3 )
+text = "Suikerterein"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="."]
+margin_left = 613.027
+margin_top = 20.4221
+margin_right = 653.027
+margin_bottom = 60.4221
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TextureButton" parent="UI"]
+margin_left = 214.0
+margin_top = 362.468
+margin_right = 480.0
+margin_bottom = 651.468
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="TextureButton" parent="UI"]
+margin_left = -207.978
+margin_top = 438.915
+margin_right = 72.0217
+margin_bottom = 695.915
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="UI"]
+margin_left = 573.054
+margin_top = 515.575
+margin_right = 973.051
+margin_bottom = 665.575
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
